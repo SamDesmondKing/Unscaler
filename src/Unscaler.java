@@ -7,11 +7,12 @@ public class Unscaler {
 
 	public static void main(String[] args) {
 
-		int path = 1;
+		final int numFiles = 5;
+		int testID = 1;
 		
-		for (int j = 0; j < 5; j++) {
+		for (int j = 0; j < numFiles; j++) {
 
-			File file1 = new File("files/no-valid/train");
+			File file1 = new File("files/learning-rate/test" + testID);
 
 			ArrayList<String> myArray = new ArrayList<String>();
 			ArrayList<String> desiredOutcome = new ArrayList<String>();
@@ -89,11 +90,11 @@ public class Unscaler {
 			System.out
 					.println("Result " + (j + 1) + "\nPatterns: " + numPat + "\nTSS: " + TSS + "\nMSE: " + roundMSE + "\n");
 
-			path++;
+			testID++;
 		}
 	}
 
-	// Converts ArrayList<Strin> into ArrayList<Double>
+	// Converts ArrayList<String> into ArrayList<Double>
 	private static ArrayList<Double> getDoubleArray(ArrayList<String> stringArray) {
 		ArrayList<Double> result = new ArrayList<Double>();
 		for (String stringValue : stringArray) {
